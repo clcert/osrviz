@@ -49,7 +49,6 @@ const regex = /dominios_([a-z]+)_ranking_pais_semana/;
         computed: {
             chartNames: function () {
                 return this.chartTypes.map( x => {
-                    console.log(Config)
                     return Config.NOMBRES[x]
                 })
             },

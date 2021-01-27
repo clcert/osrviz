@@ -34,7 +34,6 @@ export default {
     computed: {
         chartTabNames: function () {
             return this.chartTabs.map( x => {
-                console.log(Config)
                 return Config.TABS[x]
             })
         },
@@ -54,13 +53,11 @@ export default {
         },
         chartColors: function () {
             return this.chartTypes.map( x => {
-                console.log(Config)
                 return Config.COLORES[x]
             })
         },
         chartNames: function () {
             return this.chartTypes.map( x => {
-                console.log(Config)
                 return Config.NOMBRES[x]
             })
         },

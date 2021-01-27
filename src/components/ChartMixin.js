@@ -67,7 +67,6 @@ export default {
     columnas: function() {
       const meta = this.$store.getters.conseguirMeta(this.id)
       let cols = []
-      console.log(`columnasmeta:`, meta)
       for (var k in meta.columnas) {
         cols.push({
           "value": k,
@@ -80,12 +79,10 @@ export default {
   methods: {
     visibilityChanged(isVisible) {
       if (isVisible) {
-      console.log(`${this.id} es visible por primera vez`)
       this.$store.dispatch('updateData', this.id)
       }
     },
     mapFunction(x) {
-      console.log("map function not defined!")
         return x            
     }
   }

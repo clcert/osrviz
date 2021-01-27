@@ -80,10 +80,8 @@ export default new Vuex.Store({
   getters: {
     conseguirDatos: (state) => (csvname) => {
       if (state.csvs[csvname] === undefined) {
-        console.log(`archivo ${csvname} no descargado todavía`)
         return []
       } 
-      console.log(`archivo ${csvname} ya fue descargado!`)
       return state.csvs[csvname]
     },
     conseguirMeta: () => (dataid) => {
@@ -104,20 +102,17 @@ export default new Vuex.Store({
   actions: {
     updateData: (context, graphname) => {
       if (Graficos[graphname] === undefined) {
-        console.log(`gráfico con id ${graphname} no encontrado`)
         return
       }
       let graphData = Graficos[graphname] 
       graphData.archivos.forEach((archivo)=> {
         if (context.state.csvs[archivo] != undefined && context.state.csvs[archivo].length == 0) {
-          console.log(`todavía no tengo ${archivo}, lo buscaré`)
           Papa.parse(`${Config.API_ROUTE}/${archivo}.csv`, {
             header: true,
             dynamicTyping: true,
             download: true,
             skipEmptyLines: true,
             complete: function(resultados) {
-                console.log(`archivo ${archivo} descargado!`)
                 context.commit('nuevosDatos', {
                   nombre: archivo,
                   resultados:resultados.data.map(x => {
@@ -128,8 +123,6 @@ export default new Vuex.Store({
                   })})
             }
           })
-        } else {
-          console.log(`archivo ${archivo} no encontrado`)
         }
       })
     }

@@ -54,27 +54,111 @@ export const Graficos = {
             "c": "N° Dominios"
         },
     },
-    "vulnerabilidadesTotal": {
-        "titulo": "Malware detectado total",
-        "descripcion": "Número de reportes de malware en máquinas chilenas" ,
+    "vulnerabilidadesFuerzaBruta": {
+        "titulo": "Malware tipo Fuerza Bruta",
+        "descripcion": "Número de reportes de malware de tipo Fuerza Bruta en máquinas con IPs chilenas" ,
         "nombreArchivos": [
             "Fuerza Bruta", 
-            "Command and Control",
-            "Darknets",
-            "Honeypots",
-            "Resolvers DNS Abiertos",
-            "Phishing",
-            "Proxy Abierto",
-            "SPAM"
         ],
         "archivos": [
             "reportes_vulnerabilidades_bruteforce", 
+        ],
+        "columnas": {
+            "date": "Semana",
+            "reports_number": "N° IPs detectadas",
+        },
+    },
+    "vulnerabilidadesCommandControl": {
+        "titulo": "Malware tipo Command and Control",
+        "descripcion": "Número de reportes de malware de tipo Command and Control en máquinas con IPs chilenas" ,
+        "nombreArchivos": [
+            "Command and Control",
+        ],
+        "archivos": [
             "reportes_vulnerabilidades_c2",
+        ],
+        "columnas": {
+            "date": "Semana",
+            "reports_number": "N° IPs detectadas",
+        },
+    },
+    "vulnerabilidadesDarknets": {
+        "titulo": "Máquinas tipo Darknet",
+        "descripcion": "Número de reportes de máquinas de tipo Darknet con IPs chilenas" ,
+        "nombreArchivos": [
+            "Darknets",
+        ],
+        "archivos": [
             "reportes_vulnerabilidades_darknet",
+        ],
+        "columnas": {
+            "date": "Semana",
+            "reports_number": "N° IPs detectadas",
+        },
+    },
+    "vulnerabilidadesHoneypots": {
+        "titulo": "Máquinas tipo Honeypot",
+        "descripcion": "Número de reportes de máquinas de tipo Honeypot con IPs chilenas" ,
+        "nombreArchivos": [
+            "Honeypots",
+        ],
+        "archivos": [
             "reportes_vulnerabilidades_honeypot",
+        ],
+        "columnas": {
+            "date": "Semana",
+            "reports_number": "N° IPs detectadas",
+        },
+    },
+    "vulnerabilidadesResolvers": {
+        "titulo": "Resolvers Abiertos",
+        "descripcion": "Número de reportes de máquinas con resolvers abiertos e IPs chilenas" ,
+        "nombreArchivos": [
+            "Resolvers DNS Abiertos",
+        ],
+        "archivos": [
             "reportes_vulnerabilidades_openresolver",
+        ],
+        "columnas": {
+            "date": "Semana",
+            "reports_number": "N° IPs detectadas",
+        },
+    },
+    "vulnerabilidadesPhishing": {
+        "titulo": "Máquinas relacionadas con Phishing",
+        "descripcion": "Número de reportes de máquinas relacionadas con phishing con IPs chilenas" ,
+        "nombreArchivos": [
+            "Phishing",
+        ],
+        "archivos": [
             "reportes_vulnerabilidades_phishing",
+        ],
+        "columnas": {
+            "date": "Semana",
+            "reports_number": "N° IPs detectadas",
+        },
+    },
+    "vulnerabilidadesProxy": {
+        "titulo": "Proxies Abiertos",
+        "descripcion": "Número de reportes de máquinas con proxies abiertos e IPs chilenas" ,
+        "nombreArchivos": [
+            "Proxy Abierto",
+        ],
+        "archivos": [
             "reportes_vulnerabilidades_proxy",
+        ],
+        "columnas": {
+            "date": "Semana",
+            "reports_number": "N° IPs detectadas",
+        },
+    },
+    "vulnerabilidadesSpam": {
+        "titulo": "Máquinas relacionadas con SPAM",
+        "descripcion": "Número de reportes de máquinas con reportes de SPAM e IPs chilenas" ,
+        "nombreArchivos": [
+            "SPAM"
+        ],
+        "archivos": [
             "reportes_vulnerabilidades_spam"
         ],
         "columnas": {
