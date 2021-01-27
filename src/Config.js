@@ -27,21 +27,6 @@ export const Paginas = [
         icon: "flag-outline"
     },
     {
-        slug: "correo",
-        title: "Correo Electrónico",
-        icon: "email"
-    },
-    {
-        slug: "dns",
-        title: "DNS",
-        icon: "dns"
-    },
-    {
-        slug: "web",
-        title: "Páginas Web",
-        icon: "web"
-    },
-    {
         slug: "malware",
         title: "Malware",
         icon: "bug"
@@ -69,27 +54,35 @@ export const Graficos = {
             "c": "N° Dominios"
         },
     },
-    "vulnerabilidadesPortipo": {
-        "titulo": "Malware detectado por tipo",
-        "descripcion": "Número de reportes de malware en máquinas chilenas, por tipo",  
-        "archivos": ["reportes_vulnerabilidades"],
-        "columnas": {
-            "date": "Semana",
-            "reports_number": "N° IPs detectadas",
-            "src": "Fuente",
-            "report_type":"Tipo de vulnerabilidad"
-        },
-    },
     "vulnerabilidadesTotal": {
         "titulo": "Malware detectado total",
         "descripcion": "Número de reportes de malware en máquinas chilenas" ,
+        "nombreArchivos": [
+            "Fuerza Bruta", 
+            "Command and Control",
+            "Darknets",
+            "Honeypots",
+            "Resolvers DNS Abiertos",
+            "Phishing",
+            "Proxy Abierto",
+            "SPAM"
+        ],
+        "archivos": [
+            "reportes_vulnerabilidades_bruteforce", 
+            "reportes_vulnerabilidades_c2",
+            "reportes_vulnerabilidades_darknet",
+            "reportes_vulnerabilidades_honeypot",
+            "reportes_vulnerabilidades_openresolver",
+            "reportes_vulnerabilidades_phishing",
+            "reportes_vulnerabilidades_proxy",
+            "reportes_vulnerabilidades_spam"
+        ],
         "columnas": {
             "date": "Semana",
             "reports_number": "N° IPs detectadas",
-            "src": "Fuente",
-            "report_type":"Tipo de vulnerabilidad"
         },
     },
+
     "dnsRankingPais": {
         "titulo": "Servidores por país",
         "descripcion": "Número de dominios chilenos con servidores en cada país",
@@ -131,5 +124,16 @@ export const Graficos = {
             "num": "# Dominios",
             "count":"# Recursos",
         },
-    }
+    },
+    "rankingServiciosConocidosWeb": {
+        "titulo": "Ranking Servicios Conocidos Web",
+        "descripcion": "Tipo y versiones de software web más reconocidas en escaneos de IPs chilenas",
+        "archivos": ["nombres_servicios_identificados"],
+        "columnas": {
+            "ranking": "Ranking",
+            "asn_name":"ASN",
+            "num_ips": "N° IPs",
+        },
+    },
+
 }

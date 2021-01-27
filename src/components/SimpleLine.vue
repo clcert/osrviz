@@ -39,11 +39,17 @@ import ChartMixin from './ChartMixin.js'
             chartData() {
                 let allData = []
                 this.chartMeta.archivos.forEach((archivo, i) => {
-                    let data = {
-                        "name": this.chartMeta.nombreArchivos[i],
-                        "data": this.$store.getters.conseguirDatos(archivo)
-                    };
-                    allData.push(data);
+                    let fileData = this.$store.getters.conseguirDatos(archivo)
+                    let columnas = this.chartMeta.columnas
+                    for (let k in columnas) {
+                        if (k !== "date") {
+                            let data = {
+                                "name": `${this.chartMeta.nombreArchivos[i]} - ${columnas[k]}`,
+                                "data": fileData.map(x => {return {"date": x.date, "c": x[k]}})
+                            };
+                            allData.push(data);
+                        }
+                    }
                 });
                 return allData
             },
