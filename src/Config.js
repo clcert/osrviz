@@ -5,11 +5,13 @@ export var Config = {
         "dns": "#0eb29f",
         "mail": "#f72e5d",
         "web": "#0b6bc4",
+        "sftp": "#e0ae0b"
     },
     NOMBRES: {
         "dns": "DNS",
         "mail": "E-mail",
         "web": "Web",
+        "sftp": "SSH/SFTP"
     },
     TABS: {
         "rrs": "RRs",
@@ -25,6 +27,21 @@ export const Paginas = [
         slug: "dominios",
         title: "Dominios .CL",
         icon: "flag-outline"
+    },
+    {
+        slug: "concentracion",
+        title: "Concentración",
+        icon: "server-network"
+    },
+    {
+        slug: "certificados",
+        title: "Certificados TLS",
+        icon: "lock"
+    },
+    {
+        slug: "servicios",
+        title: "Servicios",
+        icon: "earth"
     },
     {
         slug: "malware",
@@ -174,7 +191,7 @@ export const Graficos = {
         "columnas": {
             "ranking": "Ranking",
             "country_name":"País",
-            "num_ips": "N° IPs",
+            "num": "N° IPs",
         },
     },
     "dnsRankingASN": {
@@ -184,7 +201,7 @@ export const Graficos = {
         "columnas": {
             "ranking": "Ranking",
             "asn_name":"ASN",
-            "num_ips": "N° IPs",
+            "num": "N° IPs",
         },
     },
     "resilienciaDominios": {
@@ -209,15 +226,54 @@ export const Graficos = {
             "count":"# Recursos",
         },
     },
-    "rankingServiciosConocidosWeb": {
-        "titulo": "Ranking Servicios Conocidos Web",
-        "descripcion": "Tipo y versiones de software web más reconocidas en escaneos de IPs chilenas",
-        "archivos": ["nombres_servicios_identificados"],
+    "certificadosTLSMail": {
+        "titulo": "Certificados TLS de Correo Electrónico",
+        "descripcion": "Estado de certificados TLS asociados a servicios de correo electrónico en dominios chilenos",
+        "nombreArchivos": [
+            "Certificados TLS Correo Electrónico",
+        ],
+        "archivos": ["certificados_tls_mail"],
         "columnas": {
-            "ranking": "Ranking",
-            "asn_name":"ASN",
-            "num_ips": "N° IPs",
+            "date": "Fecha",
+            "expired": "Vencidos",
+            "selfsigned": "autofirmados",
+            "insecure_signature_algorithm": "Algoritmo Firmado Inseguro",
+            "insecure_tls_protocol": "Protocolo TLS inseguro",
+            "insecure_key_size": "Tamaño de llave inseguro",
+            "total": "Total"
         },
     },
+    "certificadosTLSWeb": {
+        "titulo": "Certificados TLS de Páginas Web",
+        "descripcion": "Estado de certificados TLS asociados a servicios de páginas web en dominios chilenos",
+        "nombreArchivos": [
+            "Certificados TLS Web",
+        ],
+        "archivos": ["certificados_tls_web"],
+        "columnas": {
+            "date": "Fecha",
+            "expired": "Vencidos",
+            "selfsigned": "autofirmados",
+            "insecure_signature_algorithm": "Algoritmo Firmado Inseguro",
+            "insecure_tls_protocol": "Protocolo TLS inseguro",
+            "insecure_key_size": "Tamaño de llave inseguro",
+            "total": "Total"
+        },    
+    },
+    "serviciosActivos": {
+        "titulo": "Servicios activos en IPs chilenas",
+        "descripcion": "Número de servicios activos en IPs chilenas",
+        "nombreArchivos": [
+            "Servicios Activos Correo Electrónico",
+            "Servicios Activos Web",
+            "Servicios Activos SSH/SFTP",
+        ],
+        "archivos": ["servicios_activos_mail", "servicios_activos_web", "servicios_activos_sftp"],
+        "columnas": {
+            "date": "Fecha",
+            "count": "Número Servicios",
+        },
+    },
+
 
 }

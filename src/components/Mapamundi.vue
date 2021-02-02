@@ -77,7 +77,7 @@ const regex = /dominios_([a-z]+)_ranking_pais_semana/;
             postMap: function(allData) {
                 let z = {}
                 allData.data.forEach(y => {
-                    z[y.country_alpha2] = y.num_ips
+                    z[y.country_alpha2] = y.num
                 })
                 return z
             }

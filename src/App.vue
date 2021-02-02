@@ -127,7 +127,7 @@ export default {
       if (to.meta.title.length == 0) {
         to.meta.title = 'OSR CLCERT'
       }
-      document.title = "OSR CLCERT - " + to.meta.title
+      document.title = to.meta.title + " - OSR CLCERT" 
       this.title = document.title
       if (to.meta.icon.length == 0) {
         to.meta.icon = 'computer'

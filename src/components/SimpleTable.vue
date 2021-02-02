@@ -10,7 +10,7 @@
             <v-tab-item bottom v-for="cType in chartTypes" :key="cType + '-' + fechaActual" :value="cType" :href="'#'+cType">
                 <v-data-table
                     :headers="columnas"
-                    :items="fechaExacta[0].data.filter(x => x.fuente == cType).map((x,i) => {x['ranking'] = i+1;return x})"
+                    :items="fechaExacta[0].data.filter(x => x.fuente == cType).map((x,i) => {x.ranking = i+1;return x})"
                     item-key="country_alpha2"
                     class="elevation-1"
                     :search="search"

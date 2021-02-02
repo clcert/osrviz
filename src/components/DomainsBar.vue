@@ -95,7 +95,7 @@ export default {
                             } else {   
                                 allData[tipo][grupo][y.num] = y.count;
                             }
-                        }
+                        } 
                     })
                 }
             })

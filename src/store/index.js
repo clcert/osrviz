@@ -10,8 +10,7 @@ function lunesPasado(datestr) {
   var fechaActual = new Date(datestr+"T00:00:00")
   if (datestr === "now") {
     fechaActual = new Date()
-    fechaActual.setDate(fechaActual.getDate() - 7)
-    fechaActual.setTime(fechaActual.getTime() - fechaActual.getTimezoneOffset() * 60000)
+    fechaActual.setDate(fechaActual.getDate() - 7 - ( fechaActual.getDay() + 6) % 7)
   }
   fechaActual.setDate(fechaActual.getDate() - fechaActual.getDay() + (fechaActual.getDay() == 0 ? -6 : 1))
   return fechaActual
@@ -40,7 +39,8 @@ function listaDeFechas() {
 export default new Vuex.Store({
   state: {
     csvs: {
-      certificados_tls: [],
+      certificados_tls_web: [],
+      certificados_tls_mail: [],
       dominios_dns_ranking_asn_semana: [],
       dominios_dns_ranking_pais_semana: [],
       dominios_eliminados_semana: [],
@@ -71,7 +71,10 @@ export default new Vuex.Store({
       reportes_vulnerabilidades_phishing: [],
       reportes_vulnerabilidades_proxy: [],
       reportes_vulnerabilidades_spam: [],
-      servicios_activos: [],
+      servicios_activos_sftp: [],
+      servicios_activos_web: [],
+      servicios_activos_mail: [],
+
       // define all csv names or else there will be no reactivity
     },
     fechaActual: lunesPasado("now").toISOString().split("T")[0],
