@@ -5,10 +5,10 @@
         class="mx-auto"
         outlined
     >
-        <v-card-title>[{{type}}] {{title}}</v-card-title>
+        <v-card-title>{{title}}</v-card-title>
         <v-card-subtitle>{{description}}</v-card-subtitle>
         <slot/>
-                <v-card-actions>
+        <v-card-actions>
             <v-menu offset-y>
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn
